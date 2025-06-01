@@ -1,0 +1,15 @@
+[
+  {"command": "condaenv", "description": "Create and activate micromamba env with Python 3.10"},
+  {"command": "deps", "description": "Install all dependencies and Chatterbox (micromamba + pip)"},
+  {"command": "env", "description": "Set up Python environment using uv"},
+  {"command": "gen <desc>", "description": "Generate code or file from description (placeholder)"},
+  {"command": "test", "description": "Run tests (placeholder)"},
+  {"command": "version", "description": "Version outputs (placeholder)"},
+  {"command": "record <output.wav> [duration]", "description": "Record audio from MacBook Pro Microphone (default 5s)"},
+  {"command": "tts <text> [--audio-prompt path]", "description": "Generate TTS audio from text using Chatterbox, optionally with a reference voice WAV file"},
+  {"command": "createmcp", "description": "Scaffold a Cloudflare Worker MCP server for your voice agent"},
+  {"command": "commit <msg>", "description": "Commit and push with message"},
+  {"command": "startserver", "description": "Start the FastAPI TTS server on port 9010"},
+  {"command": "stopserver", "description": "Stop the FastAPI TTS server (uvicorn)"},
+  {"command": "help", "description": "Show this help menu"}
+] 
