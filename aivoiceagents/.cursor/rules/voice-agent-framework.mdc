@@ -1,0 +1,36 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor Rule Structure Reference
+
+Each rule file is written in MDC (.mdc), a lightweight format that supports metadata and content in a single file. Rules support the following types:
+
+| Rule Type       | Description                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| Always          | Always included in the model context                                                         |
+| Auto Attached   | Included when files matching a glob pattern are referenced                                   |
+| Agent Requested | Rule is available to the AI, which decides whether to include it. Must provide a description |
+| Manual          | Only included when explicitly mentioned using @ruleName                                      |
+
+---
+description: Guidance and standards for building AI voice agents using Chatterbox TTS in this project.
+globs:
+  - '**/*.py'
+alwaysApply: true
+---
+
+# AI Voice Agent Framework Rule
+
+- Use modular, extensible Python code for all agent and TTS components.
+- Integrate Chatterbox TTS for all text-to-speech functionality.
+- Document all public classes and functions with clear docstrings.
+- Write simple usage examples for each module.
+- Design agent interfaces to allow easy swapping of TTS, input, and output modules.
+- Prefer dependency injection for agent components.
+- Include basic tests for each new feature or module.
+- Ask for clarification if requirements are ambiguous.
+- Follow best practices for Python project structure and code style (PEP8).
+
+@README.md

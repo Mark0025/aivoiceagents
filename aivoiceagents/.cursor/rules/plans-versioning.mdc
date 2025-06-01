@@ -1,0 +1,33 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Cursor Rule Structure Reference
+
+Each rule file is written in MDC (.mdc), a lightweight format that supports metadata and content in a single file. Rules support the following types:
+
+| Rule Type       | Description                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| Always          | Always included in the model context                                                         |
+| Auto Attached   | Included when files matching a glob pattern are referenced                                   |
+| Agent Requested | Rule is available to the AI, which decides whether to include it. Must provide a description |
+| Manual          | Only included when explicitly mentioned using @ruleName                                      |
+
+---
+description: Enforce versioning and LLM-ingestible length for all plan files in the plans/ directory.
+globs:
+  - 'plans/*.md'
+alwaysApply: true
+---
+
+# Plans Versioning and Length Rule
+
+- Every time a new plan is created or updated in the `plans/` directory, save it as a new versioned file (e.g., `plan1v0.01.md`, `plan2v0.02.md`).
+- Never overwrite or delete previous versions of plan files; always append new versions.
+- Each plan file should be kept within a length that a language model can ingest in one go (recommended: under 200-300 lines of code/content).
+- If a plan grows too long, split it into logical parts and version each part separately.
+- Document the version and date at the top of each plan file.
+- Reference previous versions as needed for traceability.
+
+@README.md
