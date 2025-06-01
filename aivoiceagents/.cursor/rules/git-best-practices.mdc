@@ -15,19 +15,20 @@ Each rule file is written in MDC (.mdc), a lightweight format that supports meta
 | Manual          | Only included when explicitly mentioned using @ruleName                                      |
 
 ---
-description: Enforce versioning and LLM-ingestible length for all plan files in the plans/ directory.
+description: Enforce git best practices—commit early and often, write clear commit messages, and ensure code is working before adding new features.
 globs:
-  - 'plans/*.md'
+  - '**/*'
 alwaysApply: true
 ---
 
-# Plans Versioning and Length Rule
+# Git Best Practices Rule
 
-- Every time a new plan is created or updated in the `plans/` directory, save it as a new versioned file (e.g., `plan1v0.01.md`, `plan2v0.02.md`).
-- Never overwrite or delete previous versions of plan files; always append new versions.
-- Each plan file should be kept within a length that a language model can ingest in one go (recommended: under 200-300 lines of code/content).
-- If a plan grows too long, split it into logical parts and version each part separately.
-- Document the version and date at the top of each plan file.
-- Reference previous versions as needed for traceability.
+- Commit early and often to capture incremental progress.
+- Write clear, descriptive commit messages that explain the "why" as well as the "what".
+- Always ensure code is working and tests pass before committing.
+- Use branches for new features or experiments; merge only when stable.
+- Review diffs before committing to avoid accidental changes.
+- Push changes regularly to keep remote in sync and avoid conflicts.
+- Never commit sensitive information (e.g., secrets, passwords).
 
 @README.md

@@ -1,0 +1,33 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Cursor Rule Structure Reference
+
+Each rule file is written in MDC (.mdc), a lightweight format that supports metadata and content in a single file. Rules support the following types:
+
+| Rule Type       | Description                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| Always          | Always included in the model context                                                         |
+| Auto Attached   | Included when files matching a glob pattern are referenced                                   |
+| Agent Requested | Rule is available to the AI, which decides whether to include it. Must provide a description |
+| Manual          | Only included when explicitly mentioned using @ruleName                                      |
+
+---
+description: Enforce shell-driven development—major code generation, file creation, and modifications must be performed via versioned shell commands/scripts, not by direct source code edits. Shell commands should be versioned, tested, and iterated for accuracy. Documentation and diagrams should also be generated via shell where possible.
+globs:
+  - '**/*'
+alwaysApply: true
+---
+
+# Shell-Driven Development Rule
+
+- All major code generation, file creation, and modifications must be performed via shell commands or scripts (e.g., bash, zsh), not by directly editing source code.
+- Shell commands/scripts should be versioned and documented (e.g., in a `shell_history/` or `scripts/` directory).
+- Test the result of each shell command and iterate on the shell command itself for improvements, not by manually editing the generated code.
+- Use shell to automate documentation and diagram generation (e.g., with Mermaid CLI, markdown tools).
+- This approach ensures reproducibility, accuracy, and leverages the shell as the orchestrator of the development process.
+- Only commit generated code after verifying it works as intended.
+
+@README.md

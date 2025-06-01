@@ -15,19 +15,20 @@ Each rule file is written in MDC (.mdc), a lightweight format that supports meta
 | Manual          | Only included when explicitly mentioned using @ruleName                                      |
 
 ---
-description: Enforce versioning and LLM-ingestible length for all plan files in the plans/ directory.
+description: Enforce versioned, step-by-step, learning-focused plans that require testing and verification before committing.
 globs:
   - 'plans/*.md'
 alwaysApply: true
 ---
 
-# Plans Versioning and Length Rule
+# Plans Learning, Testing, and Versioning Rule
 
-- Every time a new plan is created or updated in the `plans/` directory, save it as a new versioned file (e.g., `plan1v0.01.md`, `plan2v0.02.md`).
-- Never overwrite or delete previous versions of plan files; always append new versions.
-- Each plan file should be kept within a length that a language model can ingest in one go (recommended: under 200-300 lines of code/content).
-- If a plan grows too long, split it into logical parts and version each part separately.
-- Document the version and date at the top of each plan file.
-- Reference previous versions as needed for traceability.
+- Every plan must have a clear title and version (e.g., `plan2v0.01.md`).
+- Break down work into small, logical, and testable steps.
+- For each step, explain the concept, write the code, and describe how it was tested.
+- Only commit code when it is working and has been verified.
+- Document test results and verification for each step.
+- Push plans and code to GitHub only after successful testing.
+- Never overwrite previous plan versions; always append new ones.
 
 @README.md
