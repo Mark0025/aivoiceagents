@@ -13,5 +13,8 @@ export default new OAuthProvider({
       return new Response("MCP /sse endpoint placeholder", { status: 200 });
     }
   },
-  defaultHandler
+  defaultHandler,
+  authorizeEndpoint: "/authorize",
+  tokenEndpoint: "/token",
+  clientRegistrationEndpoint: "/register"
 });
